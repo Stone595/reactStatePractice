@@ -21,7 +21,7 @@ function useFetch(url) {
       .finally(() => {
         setLoading(false);
       })
-  }, url);
+  }, [url]);
   
   const refetch = () => {
     setLoading(true);
