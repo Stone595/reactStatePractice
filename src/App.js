@@ -1,7 +1,6 @@
 
 import './App.css';
 import useFetch from './useFetch';
-
 function Kanyebox() {
   const {data, loading, error, refetch} = useFetch(`https://api.kanye.rest`)
   
@@ -35,6 +34,28 @@ function Chuckbox() {
   )
 }
 
+function Nasabox() {
+  const {data, loading, error, refetch} = useFetch(`https://eonet.gsfc.nasa.gov/api/v3/events`); 
+
+  if(loading) return   <div className='nasa-box '><h2>Nasa</h2><div>Loading...</div><button onClick={refetch}>More Events</button></div>
+  if(error) return   <div className='nasa-box '><h2>Nasa</h2><div>Error. Could not grab data</div><button onClick={refetch}>More Events</button></div>
+
+  
+  return (
+    <div className='nasa-box '>
+      <h2>Nasa</h2>
+      <ul>
+        {data.events.map((e) => {
+          return (
+            <li key={e.id}>{e.title}</li>
+          )
+        })}
+      </ul>
+      {/* <h1>{data?.events[0].title}</h1> */}
+      <button onClick={refetch}>More Nasa</button>
+    </div>
+  )
+}
 
 function App() {    
 
@@ -43,6 +64,7 @@ function App() {
       <div className='main-container'>
         <Kanyebox />
         <Chuckbox />
+        <Nasabox />
       </div>
     </div>
   )
