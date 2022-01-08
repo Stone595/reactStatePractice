@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.App {
+  min-width: 100%;
+  min-height: 100%;
+}
+.main-container{
+  min-width: 100vw;
+  min-height: 100vh;
+  padding: 1rem;
+
+  display: flex; 
+  justify-content: space-evenly;  
+  flex-wrap: wrap;
+}
+body{
+  background-color: #ffffff;
+
+}
+h1 {
+  font-size: 1.3rem;
+}
+.box{
+  width: 20rem;
+  height: 23rem;
+  padding: 1rem;
+  border-radius: 14px;
+  font-size: 1rem;
+
+  background-color: rgba(149, 163, 179, .3);
+  box-shadow: 2px 7px 16px 2px rgba(0,0,0,0.66);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* .chuck-box{
+  width: 20rem;
+  height: 23rem;
+  background-color: blue;
+
+} */
+
